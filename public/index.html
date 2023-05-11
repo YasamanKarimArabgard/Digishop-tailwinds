@@ -36,29 +36,62 @@
       </div>
   </div>
   </div>
-  <!-- products container -->
-  <div class="grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-    <div class="bg-white rounded-xl p-2 shadow-sm">
-      <div class="mb-5">
-        image
-      <!-- <img src="/assets/images/Single Product/Gallery - 3.png" alt="product"> -->
+
+  <div class="grid grid-cols-12 md:grid-rows-[55px-minmax(500px, _1fr)] md:gap-8">
+    <!-- sortSection -->
+    <div class="bg-white hidden md:block p-4 col-span-9">sort section</div>
+    <!-- sidebar -->
+    <div class="bg-white hidden md:block p-4 col-span-3 row-span-2">sidebar</div>
+    <!-- products section -->
+    <div class="p-4 col-span-12 md:col-span-9">
+      <div x-data="{ products : [
+        {id : 1 , titile :' ساعت هوشمند سری7', price :'۱۲,۳۴۵,۶۸۹ تومان' },
+        {id : 2 , titile :' ساعت هوشمند سری4', price :'۱۲,۳۴۵,۶۸۹ تومان' },
+        {id : 3 , titile :' ساعت هوشمند سری6', price :'۱۲,۳۴۵,۶۸۹ تومان' },
+        {id : 4 , titile :' ساعت هوشمند سری7', price :'۱۲,۳۴۵,۶۸۹ تومان' },
+        {id : 5 , titile :' ساعت هوشمند سری5', price :'۱۲,۳۴۵,۶۸۹ تومان' },
+        {id : 6 , titile :' ساعت هوشمند سری7', price :'۱۲,۳۴۵,۶۸۹ تومان' },
+        ]}"
+         class="grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-4">
+        <!-- single product -->
+        <template x-for="product in products" :key="product.id">
+          <div class="bg-white rounded-xl p-2 shadow-sm">
+            <!-- product image -->
+            <div class="mb-5 p-2 bg-gray-100 rounded-xl">
+             <img src="/assets/images/apple-watch-7.png" alt="product">
+            </div>
+            <!-- product desc -->
+            <div class="flex items-center justify-between w-full mb-3">
+              <!-- products circles -->
+              <div x-data="{ color: 'red' }"class="flex items-center">
+                <div @click="color='blue'" :class="color=== 'blue' ? 'ring-2 ring-blue-300' : '' " class="h-6 w-6 sm:w-8 sm:h-8 cursor-pointer bg-blue-400 rounded-full  border-2 border-white -mr-1.5 flex justify-center items-center">
+                  <svg x-show="color === 'blue' " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5  stroke-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>            
+                </div>
+                <div @click="color='green'" :class="color=== 'green' ? 'ring-2 ring-green-300' : '' " class="h-6 w-6 sm:w-8 sm:h-8 cursor-pointer bg-green-400 rounded-full border-2 border-white -mr-1.5 flex justify-center items-center">
+                  <svg x-show="color === 'green' " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 stroke-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </div>
+                <div @click="color='red'" :class="color=== 'red' ? 'ring-2 ring-red-300' : '' " class="h-6 w-6 sm:w-8 sm:h-8 cursor-pointer bg-red-400 rounded-full border-2 border-white -mr-1.5 flex justify-center items-center">
+                  <svg x-show="color === 'red' " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5  stroke-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </div>
+              </div>
+              <span class="text-slate-400 text-sm">اپل</span>
+            </div>
+            <!-- product title -->
+            <div class="text-slate-800 text-sm font-bold">ساعت هوشمند اپل سری 6</div>
+            <div class="text-orange-600 font-bold text-lg text-center mb-4"></div>
+            <hr class="bg-red-100"/>
+            <button class="text-orange-400 font-bold text-2xl w-full py-2">ثبت سفارش </button>
+          </div>
+        </template>
       </div>
-      <!-- product desc -->
-      <div class="flex items-center justify-between w-full">
-        <div>circels</div>
-        <span class="text-slate-200 text-sm">اپل</span>
-      </div>
-      <!-- product title -->
-      <div class="text-slate-800 text-sm font-bold">ساعت هوشمند اپل سری 6</div>
-      <div class="text-orange-600 font-bold text-lg text-center mb-4">14,750,000 تومان</div>
-      <hr class="bg-red-100"/>
-      <button class="text-orange-400 font-bold text-2xl w-full py-2">ثبت سفارش </button>
     </div>
-    <div class="bg-blue-100">2</div>
-    <div class="bg-blue-100">3</div>
-    <div class="bg-blue-100">4</div>
-    <div class="bg-blue-100">5</div>
-    <div class="bg-blue-100">6</div>
   </div>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
