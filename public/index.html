@@ -36,14 +36,37 @@
       </div>
   </div>
   </div>
-
   <div class="grid grid-cols-12 md:grid-rows-[55px-minmax(500px, _1fr)] md:gap-8">
     <!-- sortSection -->
-    <div class="bg-white hidden md:block p-4 col-span-9">sort section</div>
+    <div class="hidden md:block col-span-8 lg:col-span-9">
+      <div x-data="{sort : 1 , activeClass : 'text-slate-800 font-bold'}" class="bg-white p-4 flex items-center gap-x-4 text-right justify-end text-gray-400 rounded-lg">       
+        <button @click="sort = 2" :class="sort === 2 ? activeClass : ''" class="py-4 relative">
+          <span>ارزانترین</span>
+          <span x-show="sort === 2" class="w-2 h-2 bg-orange-600 rounded-full absolute top-1 left-0"></span>
+        </button>
+        <button @click="sort = 4" :class="sort === 4 ? activeClass : ''" class="py-4 relative">
+          <span>گرانترین ترین</span>
+          <span x-show="sort === 4" class="w-2 h-2 bg-orange-600 rounded-full absolute top-1 left-0"></span>
+        </button>
+        <button @click="sort = 3" :class="sort === 3 ? activeClass : ''" class="py-4 relative">
+          <span>پرفروش ترین</span>
+          <span x-show="sort === 3" class="w-2 h-2 bg-orange-600 rounded-full absolute top-1 left-0"></span>
+        </button>
+        <button @click="sort = 1" :class="sort === 1 ? activeClass : ''" class="py-4 relative">
+          <span>محبوب ترین</span>
+          <span x-show="sort === 1" class="w-2 h-2 bg-orange-600 rounded-full absolute top-1 left-0"></span>
+        </button>
+        <div class="bg-orange-100 p-2 rounded">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 stroke-orange-500">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25" />
+          </svg>
+        </div>        
+      </div>
+    </div>
     <!-- sidebar -->
-    <div class="bg-white hidden md:block p-4 col-span-3 row-span-2">sidebar</div>
+    <div class="bg-white hidden md:block p-4 col-span-4 lg:col-span-3 row-span-2">sidebar</div>
     <!-- products section -->
-    <div class="p-4 col-span-12 md:col-span-9">
+    <div class="p-4 col-span-12 md:col-span-8 lg:col-span-9">
       <div x-data="{ products : [
         {id : 1 , titile :' ساعت هوشمند سری7', price :'۱۲,۳۴۵,۶۸۹ تومان' },
         {id : 2 , titile :' ساعت هوشمند سری4', price :'۱۲,۳۴۵,۶۸۹ تومان' },
@@ -52,7 +75,7 @@
         {id : 5 , titile :' ساعت هوشمند سری5', price :'۱۲,۳۴۵,۶۸۹ تومان' },
         {id : 6 , titile :' ساعت هوشمند سری7', price :'۱۲,۳۴۵,۶۸۹ تومان' },
         ]}"
-         class="grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-4">
+         class="grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-4 md:p-0 sm:gap-x-4 md:gap-x-6 md:gap-y-10">
         <!-- single product -->
         <template x-for="product in products" :key="product.id">
           <div class="bg-white rounded-xl p-2 shadow-sm">
