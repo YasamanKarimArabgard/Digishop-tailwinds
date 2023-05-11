@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./build/tailwind.css">
+    <title>PostCss</title>
+</head>
+<body class="bg-gray-100">
+  <!-- app-bar -->
+  <div class="px-4 mt-10 mb-6 flex md:hidden items-center justify-between">
+      <div class="w-7 h-7 bg-white shadow-lg rounded justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-orange-700">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>          
+      </div>
+      <div class="text-lg font-bold text-slate-500">ساعت هوشمند</div>
+      <div>Digitize</div>
+  </div>
+  <!-- filter & sort -->
+  <div class="flex md:hidden items-center justify-between px-4 gap-x-4 mb-9">
+    <div class="bg-white rounded p-4 flex justify-end items-center w-1/2">
+      <div class="text-slate-800 mr-3"> فیلتر : اپل</div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-gray-300">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+        </svg>      
+      </div>
+    </div>
+    <div class="bg-white rounded p-4 flex justify-end items-center w-1/2">
+      <div class="text-slate-800 mr-3">محبوب ترین ها</div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-orange-600">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25" />
+        </svg>
+      </div>
+  </div>
+  </div>
+  <!-- products container -->
+  <div class="grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+    <div class="bg-white rounded-xl p-2 shadow-sm">
+      <div class="mb-5">
+        image
+      <!-- <img src="/assets/images/Single Product/Gallery - 3.png" alt="product"> -->
+      </div>
+      <!-- product desc -->
+      <div class="flex items-center justify-between w-full">
+        <div>circels</div>
+        <span class="text-slate-200 text-sm">اپل</span>
+      </div>
+      <!-- product title -->
+      <div class="text-slate-800 text-sm font-bold">ساعت هوشمند اپل سری 6</div>
+      <div class="text-orange-600 font-bold text-lg text-center mb-4">14,750,000 تومان</div>
+      <hr class="bg-red-100"/>
+      <button class="text-orange-400 font-bold text-2xl w-full py-2">ثبت سفارش </button>
+    </div>
+    <div class="bg-blue-100">2</div>
+    <div class="bg-blue-100">3</div>
+    <div class="bg-blue-100">4</div>
+    <div class="bg-blue-100">5</div>
+    <div class="bg-blue-100">6</div>
+  </div>
+</body>
+</html>
