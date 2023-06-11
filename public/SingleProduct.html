@@ -1,0 +1,68 @@
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./build/tailwind.css">
+    <title>Document</title>
+</head>
+<body class="bg-gray-100">
+    <!-- app-bar -->
+  <div class="px-4 mt-10 mb-6 flex md:hidden items-center justify-between">
+    <div>Digitize</div>
+    <div class="text-lg font-bold text-slate-500">ساعت هوشمند</div>
+    <div class="w-7 h-7 bg-white shadow-lg rounded justify-center items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-orange-700">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>          
+    </div>
+  </div>
+  <!-- breadCrumbs -->
+  <div class="flex items-center gap-x-2 px-4 text-sm">
+    <span class="text-orange-500">تلفن همراه</span>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-slate-400">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+      </svg>      
+    <span class="text-orange-500">برند آیفون</span>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-slate-400">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+      </svg>      
+    <span class="text-gray-400">آیفون 13</span>
+  </div>
+   <!-- product -->
+  <div>
+    <!-- product img -->
+    <div class="p-2 flex justify-center py-5 mb-3">
+        <img src="../assets/images/iphone-13.png" alt="iphone" class="w-3/4">
+    </div>
+    <!-- product desc -->
+    <!-- product titles -->
+    <div class="w-full flex flex-col justify-center items-center mb-5">
+        <span class="text-slate-800 font-bold text-md">گوشی آیفون 13 مدل 128 گیگابایت</span>
+        <span class="text-gray-500">Apple iphone 13 12 GB</span>
+    </div>
+    <div class="flex items-center justify-between w-full mb-3 px-4">
+          <span class="text-slate-800 text-md font-bold">انتخاب رنگ :</span>
+          <!-- product color section -->
+          <div x-data="{ color: 'red' }"class="flex items-center">
+            <div @click="color='blue'" :class="color=== 'blue' ? 'ring-2 ring-blue-300' : '' " class="h-7 w-7 sm:w-8 sm:h-8 cursor-pointer bg-blue-400 rounded-full  border-2 border-white -mr-1.5 flex justify-center items-center">
+              <svg x-show="color === 'blue' " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5  stroke-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>            
+            </div>
+            <div @click="color='green'" :class="color=== 'green' ? 'ring-2 ring-green-300' : '' " class="h-7 w-7 sm:w-8 sm:h-8 cursor-pointer bg-green-400 rounded-full border-2 border-white -mr-1.5 flex justify-center items-center">
+              <svg x-show="color === 'green' " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 stroke-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </div>
+            <div @click="color='red'" :class="color=== 'red' ? 'ring-2 ring-red-300' : '' " class="h-7 w-7 sm:w-8 sm:h-8 cursor-pointer bg-red-400 rounded-full border-2 border-white -mr-1.5 flex justify-center items-center">
+              <svg x-show="color === 'red' " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5  stroke-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
